@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Rentals</h2>
+
+    <div class="insert">
+        <form id="insert-form" action='/add-rental/submit' method="POST">
+            <strong>Add Rental</strong>
+            <fieldset class="fields">
+                <label> Employee:
+                    <select name="employeeID" class="employee-dropdown">
+                        {{#each employees}}
+                            <option name="employeeID" value="{{this.employeeID}}">{{this.employeeName}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <br>
+                <br>
+                <label> Book:
+                    <select name="bookID" class="book-dropdown">
+                        {{#each books}}
+                            <option name="bookID" value="{{this.bookID}}">{{this.title}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <br>
+                <br>
+                <label> Customer:
+                    <select name="customerID" class="customer-dropdown">
+                        {{#each customers}}
+                            <option name="customerID" value="{{this.customerID}}">{{this.customerName}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <br>
+                <br>
+                <label> Start Date:
+                    <input name="startDate" type="date" value={{todaysDate}}>
+                </label>
+                <br>
+                <br>
+                <label> Late Return Date:
+                    <input name="lateReturnDate" type="date" value="{{lateDate}}">
+                </label>
+                <br>
+                <br>
+                <label> Rate:
+                    <input name="rate" type="number" value={{defaultRate}}>
+                </label>
+                <br>
+                <br>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/rentals';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Add Rental">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <title>Rentals</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="../style.css" rel="stylesheet" type="text/css"/>
+    <script src="../js/form_switcher.js"></script>
+</head>
+
+<body onload="selectItem()">
+    <div class="header">
+        <h1>The Early Bird Book Rentals</h1>
+        <ul class="navbar">
+            <li><a href="index.html" id="home-page">Home</a></li>
+            <li><a href="books.html" id="books-page">Books</a></li>
+            <li><a href="languages.html" id="languages-page">Languages</a></li>
+            <li><a href="genres.html" id="genres-page">Genres</a></li>
+            <li><a href="book-genres.html" id="book-genres-page">Book Genres</a></li>
+            <li><a href="employees.html" id="employees-page">Employees</a></li>
+            <li><a href="customers.html" id="customers-page">Customers</a></li>
+            <li><a class="active" href="rentals.html" id="rentals-page">Rentals</a></li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+        <h2>Rentals</h2>
+        <div id="select">
+        <!--    <p><a href="#" onClick="showAll()">Display all options</a></p>-->
+        <!--    <strong>Rental History</strong>-->
+            <a class="btn" href="#" onClick="insertItem()">Add New Rental</a>
+            <br/>
+            <br/>
+            <div style="overflow-x:auto;">
+                <table>
+                    <colgroup>
+                        <col id="data1-col">
+                        <col id="data2-col">
+                        <col id="data3-col">
+                        <col id="data4-col">
+                        <col id="data5-col">
+                        <col id="data6-col">
+                        <col id="data7-col">
+                        <col id="data8-col">
+                        <col id="edit-col">
+                        <col id="delete-col" style="visibility: collapse">
+                    </colgroup>
+                    <tr>
+                        <th>Rental ID</th>
+                        <th>Employee</th>
+                        <th>Book</th>
+                        <th>Customer</th>
+                        <th>Start Date</th>
+                        <th>Late Return Date</th>
+                        <th>End Date</th>
+                        <th>Rate</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td><a href="#" onClick="updateItem('this.ID')"><span class="material-symbols-outlined">edit_square</span></a></td>
+                        <td><a href="#" onClick="deleteItem('this.ID')"><span class="material-symbols-outlined">delete</span></a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td><a href="#" onClick="updateItem('this.ID')"><span class="material-symbols-outlined">edit_square</span></a></td>
+                        <td><a href="#" onClick="deleteItem('this.ID')"><span class="material-symbols-outlined">delete</span></a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td><a href="#" onClick="updateItem('this.ID')"><span class="material-symbols-outlined">edit_square</span></a></td>
+                        <td><a href="#" onClick="deleteItem('this.ID')"><span class="material-symbols-outlined">delete</span></a></td>
+                    </tr>
+                </table>
+            </div>
+            <p>&nbsp;</p>
+        </div> <!-- select -->
+        <div id="insert">
+            <form id="insert-form" method="POST">
+                <strong>Add New Rental</strong>
+                <fieldset class="fields">
+                    <label> Employee ID:
+                        <select name="employee-name" class="employee-dropdown">
+                            <option>placeholder</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label> Book ID:
+                        <select name="book-title" class="book-dropdown">
+                            <option>placeholder</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label> Customer ID:
+                        <select name="customer-name" class="customer-dropdown">
+                            <option>placeholder</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label> Start Date:
+                        <input name="startDate" type="text">
+                    </label>
+                    <br>
+                    <br>
+                    <label> Late Date:
+                        <input name="lateDate" type="text">
+                    </label>
+                    <br>
+                    <br>
+                    <label> Rate:
+                        <input name="rate" type="text">
+                    </label>
+                </fieldset>
+                <input class="btn" id="insert-submit" type="submit" value="Add Rental">
+                <input class="btn" onClick="selectItem()" type="button" value="Cancel">
+            </form> <!--add new rental-->
+        </div><!-- insert -->
+        <div id="update">
+            <form id="update-form" method="POST">
+                <strong>Update Customer</strong>
+                <fieldset class="fields">
+                    <label> Rental End Date:
+                        <input name="endDate" type="text">
+                    </label>
+                </fieldset>
+                <input class="btn" id="update-submit" type="submit" value="Save Update">
+                <input class="btn" onClick="selectItem()" type="button" value="Cancel">
+            </form>
+        </div><!-- update -->
+        <div id="delete" style="display: none"></div>
+    </div>
+</body>
+</html>

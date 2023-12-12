@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<div class="content-container">
+    <h2>Rentals</h2>
+
+    <div class="select">
+        <a class="btn" href="/add-rental">Add New Rental</a>
+        <br/>
+        <br/>
+        <div class="scroll-table">
+            <table id="select-table">
+                <colgroup>
+                    <col id="data1-col">
+                    <col id="data2-col">
+                    <col id="data3-col">
+                    <col id="data4-col">
+                    <col id="data5-col">
+                    <col id="data6-col">
+                    <col id="data7-col">
+                    <col id="data8-col">
+                    <col id="edit-col" style="visibility: collapse">
+                    <col id="delete-col" style="visibility: collapse">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Rental ID</th>
+                        <th>Employee</th>
+                        <th>Customer</th>
+                        <th>Book</th>
+                        <th>Rate</th>
+                        <th>Start Date</th>
+                        <th>Late Return Date</th>
+                        <th>End Rental</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.rentalID}}</td>
+                        <td>{{this.employeeName}}</td>
+                        <td>{{this.customerName}}</td>
+                        <td>{{this.book}}</td>
+                        <td>{{this.rate}}</td>
+                        <td>{{formatDate this.startDate}}</td>
+                        <td>{{formatDate this.lateReturnDate}}</td>
+                        {{#if this.endDate}}
+                        <td>{{formatDate this.endDate}}</td>
+                        {{else}}
+                        <td style="text-align: center;"><a href="/update-rental/{{this.rentalID}}"><span class="material-symbols-outlined">stop_circle</span></a></td>
+                        {{/if}}
+                        <td><a href="#"><span class="material-symbols-outlined">edit_square</span></a></td>
+                        <td><a href="#"><span class="material-symbols-outlined">delete</span></a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+    

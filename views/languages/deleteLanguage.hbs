@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Languages</h2>
+
+    <div class="delete">
+        <form id="delete-form" action="/delete-language/submit"  method="POST">
+            <p>Are you sure you wish to delete the following language?</p>
+            <div class="scroll-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{languageID}}</td>
+                            <td>{{name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br/>
+            <input type="hidden" name="languageID" value="{{languageID}}">
+            <input type="hidden" name="name" value="{{name}}">
+            <input class="btn" id="cancel" onClick="location.href='/languages';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Delete Language">
+        </form>
+    </div>
+</div>

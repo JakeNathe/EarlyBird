@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Genres</h2>
+
+    <div class="delete">
+        <form id="delete-form" action="/delete-book-genre/submit"  method="POST">
+            <p>Are you sure you wish to delete the following genre from book?</p>
+            <div class="scroll-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Genre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{title}}</td>
+                            <td>{{author}}</td>
+                            <td>{{genre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br/>
+            <input type="hidden" name="bookID" value="{{bookID}}" >
+            <input type="hidden" name="genreID" value="{{genreID}}" >
+            <input class="btn" id="cancel" onClick="location.href='/book-genres';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Delete Genre from Book">
+        </form>
+    </div>
+</div>

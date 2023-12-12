@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Books</h2>
+
+    <div class="select">
+        <a class="btn" href="/add-book">Add New Book</a>
+        <br/>
+        <br/>
+        <div class="scroll-table">
+            <table id="select-table">
+                <colgroup>
+                    <col id="data1-col">
+                    <col id="data2-col">
+                    <col id="data3-col">
+                    <col id="data4-col">
+                    <col id="data5-col">
+                    <col id="data6-col">
+                    <col id="edit-col">
+                    <col id="delete-col" style="visibility: collapse">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Year Published</th>
+                        <th>Language</th>
+                        <th>Copies</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.bookID}}</td>
+                        <td>{{this.title}}</td>
+                        <td>{{this.author}}</td>
+                        <td>{{this.publishedYear}}</td>
+                        <td>{{this.language}}</td>
+                        <td>{{this.totalCopies}}</td>
+                        <td><a href="/update-book/{{this.bookID}}"><span class="material-symbols-outlined">edit_square</span></a></td>
+                        <td><a href="#"><span class="material-symbols-outlined">delete</span></a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

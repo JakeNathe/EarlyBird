@@ -1,0 +1,207 @@
+/* Import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Agbalumo|Open+Sans:400,700&display=swap');
+
+/* Font-Family Declarations */
+:root {
+    --font-primary: 'Agbalumo', serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --primary-color:  #6A8CAF;
+    --secondary-color: #fca25b;
+    --background1-color: #fdf9f5;
+    --background2-color: #ffecd3;
+    --text-color:  #4A639E;
+    --accent-color: #84bd8c;
+}
+
+/* Applying the font themes */
+body {
+    font-family: var(--font-secondary);
+    color: var(--text-color);
+    background-color: var(--background1-color);
+    margin: 0;
+    display:block;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
+
+h1 {
+    padding: 0.25rem 2rem;
+    font-size: 3.5rem;
+    font-family: var(--font-primary);
+}
+
+h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.75rem;
+    color: var(--text-color);
+}
+
+h4 {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+h5 {
+    font-family: var(--font-secondary);
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color)
+}
+
+.header {
+    margin: 0;
+    background-color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+.header h1 {
+    color: var(--background1-color);
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--text-color);
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: var(--background1-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar .active {
+    background-color: var(--primary-color);
+}
+
+.navbar li a:hover:not(.active) {
+    background-color: var(--accent-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--background1-color);
+    font-family: var(--font-secondary);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--text-color); /* A darker teal for button hover state */
+}
+
+
+.content-container {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid var(--secondary-color);
+    padding: 8px;
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: var(--background1-color);
+}
+
+td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--background2-color);
+}
+
+.scroll-table {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+table#select-table thead tr th:nth-last-child(2) {
+    width: 100px;
+    text-align: center;
+}
+
+table#select-table thead tr th:nth-last-child(1) {
+    width: 100px;
+    text-align: center;
+}
+
+table#select-table tbody tr td:nth-last-child(2) {
+    width: 100px;
+    text-align: center;
+}
+
+table#select-table tbody tr td:nth-last-child(1) {
+    width: 100px;
+    text-align: center;
+}
+
+.insert, .update, .delete {
+    width: 100%;
+    border-radius: 4px;
+}
+
+#insert, #update, #delete {
+    width: 100%;
+    border-radius: 4px;
+}
+
+fieldset {
+    margin: 20px;
+    padding: 0 10px 10px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    padding-top: 10px;
+    background-color: var(--background2-color);
+}
+
+#delete-btn {
+    background-color: #e74814;
+}
+#delete-btn:hover {
+    background-color: #b23b14; /* A darker teal for button hover state */
+}
+
+#submit, #delete-btn, #cancel {
+    float: right;
+    margin-top: 15px;
+    margin-left: 10px;
+}

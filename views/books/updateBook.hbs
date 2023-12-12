@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Books</h2>
+
+    <div id="update">
+        <form id="update-form" action="/update-book/submit" method="POST">
+            <h4>Update Book</h4>
+            <fieldset class="fields">
+                <input type="hidden" name="bookID" value="{{bookID}}" >
+                <label> Title:
+                    <input name="title" type="text" value="{{title}}">
+                </label>
+                <br>
+                <br>
+                <label> Author:
+                    <input name="author" type="text" value="{{author}}">
+                </label>
+                <br>
+                <br>
+                <label> Year Published:
+                    <input name="publishedYear" type="text" value="{{publishedYear}}">
+                </label>
+                <br>
+                <br>
+                <label> Language:
+                    <select name="languageID" id="language-dropdown">
+                        <option value="-1" selected>None</option>
+                    {{#each languages}}
+                        <option value="{{this.languageID}}" {{this.isSelected}}>{{this.name}}</option>
+                    {{/each}}
+                    </select>
+                </label>
+                <br>
+                <br>
+                <label> Copies:
+                    <input name="totalCopies" type="number" value="{{totalCopies}}">
+                </label>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/books';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Save Update">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Customers</h2>
+
+    <div class="insert">
+        <form id="insert-form" action='/add-customer/submit' method="POST">
+            <strong>Add Customer</strong>
+            <fieldset class="fields">
+                <label> First Name:
+                    <input name="firstName" type="text">
+                </label>
+                <br>
+                <br>
+                <label> Last Name:
+                    <input name="lastName" type="text">
+                </label>
+                <br>
+                <br>
+                <label> Birthdate:
+                    <input name="birthdate" type="date">
+                </label>
+                <br>
+                <br>
+                <label> Email:
+                    <input name="email" type="email">
+                </label>
+                <br>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/customers';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Add Customer">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Genres</h2>
+
+    <div class="delete">
+        <form id="delete-form" action="/delete-genre/submit" method="POST">
+            <p>Are you sure you wish to delete the following entry:</p>
+            <div class="scroll-table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{genreID}}</td>
+                        <td>{{name}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br/>
+            <input type="hidden" name="genreID" value="{{genreID}}" >
+            <input type="hidden" name="name" value="{{name}}" >
+            <input class="btn" id="cancel" onClick="location.href='/genres';" type="button" value="Cancel">
+            <input class="btn" id="delete-btn" type="submit" value="Delete Genre">
+        </form>
+    </div>
+</div>

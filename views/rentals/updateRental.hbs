@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Rentals</h2>
+
+    <div id="update">
+        <form id="update-form" action="/update-rental/submit" method="POST">
+            <h4>End Rental</h4>
+            <p>Are you sure you would like to end rental of {{book}} for {{customer}}?</p>
+            <fieldset class="fields">
+                <input type="hidden" name="rentalID" value="{{rentalID}}" >
+                <label> Late Return Date:
+                    <input name="endDate" type="date" value="{{todaysDate}}">
+                </label>
+                <br>
+                <br>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/rentals';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="End Rental">
+        </form>
+    </div>
+</div>

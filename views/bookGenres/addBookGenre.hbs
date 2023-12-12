@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Book Genres</h2>
+
+    <div class="insert">
+        <form id="insert-form" action="/add-book-genre/submit" method="POST">
+            <strong>Add Genre to Book</strong>
+            <fieldset class="fields">
+                <label> Book:
+                    <select name="bookID" class="book-dropdown">
+                        {{#each books}}
+                            <option name="bookID" value="{{this.bookID}}">{{this.title_author}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <br>
+                <br>
+                <label> Genre:
+                    <select name="genreID" class="genre-dropdown">
+                        {{#each genres}}
+                            <option value="{{this.genreID}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/book-genres';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Add Genre to Book">
+        </form>
+    </div>
+</div>

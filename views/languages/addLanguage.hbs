@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Languages</h2>
+
+    <div class="insert">
+        <form id="insert-form" action='/add-language/submit' method="POST">
+            <strong>Add Language</strong>
+            <fieldset class="fields">
+                <label> Name:
+                    <input name="name" type="text">
+                </label>
+                <br>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/languages';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Add Language">
+        </form>
+    </div>
+</div>

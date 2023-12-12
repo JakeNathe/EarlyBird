@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Genres</h2>
+
+    <div class="insert">
+        <form id="insert-form" action='/add-genre/submit' method="POST">
+            <strong>Add New Genre</strong>
+            <fieldset class="fields">
+                <label> Name:
+                    <input name="name" type="text">
+                </label>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/genres';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Add Genre">
+        </form>
+    </div>
+</div>

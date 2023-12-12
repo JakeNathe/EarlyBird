@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Books</h2>
+
+    <div class="insert">
+        <form id="insert-form" action='/add-book/submit' method="POST">
+            <strong>Add Book</strong>
+            <fieldset class="fields">
+                <label> Title:
+                    <input name="title" type="text">
+                </label>
+                <br>
+                <br>
+                <label> Author:
+                    <input name="author" type="text">
+                </label>
+                <br>
+                <br>
+                <label> Year Published:
+                    <input name="publishedYear" type="text">
+                </label>
+                <br>
+                <br>
+                <label> Language:
+                    <select name="languageID" id="language-dropdown">
+                        <option value="-1" selected>None</option>
+                    {{#each languages}}
+                        <option value="{{this.languageID}}">{{this.name}}</option>
+                    {{/each}}
+                    </select>
+                </label>
+                <br>
+                <br>
+                <label> Copies:
+                    <input name="totalCopies" type="number" value="0">
+                </label>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/books';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Save Book">
+        </form>
+    </div>
+</div>

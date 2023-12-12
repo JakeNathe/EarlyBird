@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Genres</h2>
+
+    <div class="select">
+        <a class="btn" href="/add-genre">Add New Genre</a>
+        <br/>
+        <br/>
+        <div class="scroll-table">
+            <table id="select-table">
+                <colgroup>
+                    <col id="data1-col">
+                    <col id="data2-col">
+                    <col id="edit-col" style="visibility: collapse">
+                    <col id="delete-col">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                        <tr>
+                            <td>{{this.genreID}}</td>
+                            <td>{{this.name}}</td>
+                            <td><a href="#"><span class="material-symbols-outlined">edit_square</span></a></td>
+                            <td><a href="/delete-genre/{{this.genreID}}"><span class="material-symbols-outlined">delete</span></a></td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

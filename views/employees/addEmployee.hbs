@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <h2>Employees</h2>
+
+    <div class="insert">
+        <form id="insert-form" action='/add-employee/submit' method="POST">
+            <strong>Add Employee</strong>
+            <fieldset class="fields">
+                <label> First Name:
+                    <input name="firstName" type="text">
+                </label>
+                <br>
+                <br>
+                <label> Last Name:
+                    <input name="lastName" type="text">
+                </label>
+                <br>
+            </fieldset>
+            <input class="btn" id="cancel" onClick="location.href='/employees';" type="button" value="Cancel">
+            <input class="btn" id="submit" type="submit" value="Add Employee">
+        </form>
+    </div>
+</div>
